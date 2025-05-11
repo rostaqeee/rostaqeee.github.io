@@ -1,0 +1,2258 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    color: #333;
+    background-color: #fdfdfd; /* Very light gray, almost white */
+    scroll-behavior: smooth;
+}
+
+header {
+    background: #ffffff;
+    color: #333;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+    border-bottom: 1px solid #e7e7e7;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+nav .logo {
+    font-size: 1.9rem;
+    font-weight: 700; /* Bold for Apple feel */
+    color: #1d1d1f; /* Apple's dark gray */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: #444;
+    text-decoration: none;
+    padding: 0.5rem 0.2rem; /* Minimal padding for a cleaner look, relies on margin */
+    font-weight: 600; /* Semi-bold for nav links */
+    transition: color 0.3s ease;
+    border-bottom: 2px solid transparent; /* For hover effect */
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: #007aff; /* Apple blue */
+    border-bottom-color: #007aff;
+}
+
+main {
+    overflow-x: hidden; /* Prevent horizontal scroll from animations */
+}
+
+section {
+    padding: 5rem 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    color: #1d1d1f;
+    font-weight: 700; /* Bold section titles */
+}
+
+/* Hero Section */
+#hero {
+    background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.8)), url('hero-background-placeholder.jpg'); /* Replace with a subtle background image */
+    background-size: cover;
+    background-position: center;
+    color: #1d1d1f;
+    min-height: 10vh;
+    display: flex;
+    /* align-items: center; */ /* Changed from center */
+    align-items: flex-start; /* ADD THIS: Aligns .hero-content to the top of the flex container */
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px; /* IMPORTANT: Keep this to account for sticky header height */
+}
+
+/* Add this new rule for .hero-content or modify if it exists */
+.hero-content {
+    /* Add any existing .hero-content styles here if you have them */
+    margin-top: 0vh; /* ADD THIS: Pushes the content down by 50vh from the top of hero's content area */
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700; /* Bold heading */
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-content .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    color: #333;
+    font-weight: 400;
+}
+
+.hero-content .subtitle strong {
+    font-weight: 600; /* Semi-bold for highlighted stats */
+    color: #007aff;
+}
+
+.cta-button {
+    background: #007aff;
+    color: #fff;
+    padding: 0.9rem 2.2rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600; /* Semi-bold button text */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    border: 2px solid #007aff;
+}
+
+.cta-button:hover {
+    background: #005ecb;
+    border-color: #005ecb;
+    transform: translateY(-3px);
+}
+
+.cta-button.secondary {
+    background: transparent;
+    color: #007aff;
+    border: 2px solid #007aff;
+}
+
+.cta-button.secondary:hover {
+    background: rgba(0, 122, 255, 0.1);
+    color: #005ecb;
+    border-color: #005ecb;
+}
+
+
+/* About Section */
+#about .about-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    text-align: left;
+}
+
+#about .profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+#about p {
+    font-size: 1.1rem;
+    color: #444;
+    max-width: 700px;
+}
+
+/* Stats Section */
+#stats {
+    background-color: #f4f4f7; /* Slightly different background for separation */
+}
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.stat-item {
+    background: #fff;
+    padding: 2.5rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.stat-item .stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700; /* Bold stat numbers */
+    color: #007aff;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item .stat-label {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Contact Section */
+#contact { /* Add this new rule or modify if #contact selector already exists */
+    padding-top: 1.5rem; /* Reduced top padding */
+    padding-bottom: 1.5rem; /* Reduced bottom padding */
+}
+
+#contact p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+#contact .contact-methods p {
+    margin-bottom: 0.8rem;
+}
+#contact a {
+    color: #007aff;
+    text-decoration: none;
+    font-weight: 500;
+}
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: #1d1d1f;
+    color: #a0a0a5; /* Lighter gray for footer text */
+    text-align: center;
+    padding: 2rem 20px;
+    font-size: 0.9rem;
+}
+
+/* Scroll Animation Classes */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Style for hiding header on scroll (now global) */
+header.header-hidden { /* Renamed from .header-hidden-mobile and moved out of media query */
+    transform: translateY(-105%); /* Ensures it's fully out of view, including border/shadow */
+    transition: transform 0.4s ease-in-out;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center; /* Center the logo and the nav ul block */
+        padding: 1rem 20px;
+    }
+    nav .logo {
+        margin-bottom: 1rem; /* Space below logo on mobile */
+    }
+    nav ul {
+        /* flex-direction: column; */ /* REMOVE or comment out this line */
+        flex-direction: row; /* ADD THIS: Makes items appear next to each other */
+        justify-content: center; /* ADD THIS: Centers the items in the row */
+        flex-wrap: wrap; /* ADD THIS: Allows items to wrap to the next line if space is limited */
+        align-items: center; /* This was already here, good to keep */
+        width: 100%;
+    }
+    nav ul li {
+        /* margin: 0.7rem 0; */ /* REMOVE or comment out this line */
+        margin: 0.3rem 0.3rem; /* CHANGE THIS: Adjust margin for horizontal layout */
+    }
+    nav ul li a { /* ADD these styles for smaller links */
+        font-size: 0.85rem; /* Smaller font size */
+        padding: 0.3rem 0.4rem; /* Reduced padding */
+        font-weight: 500; /* Slightly less bold if needed, or keep 600 */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content .subtitle {
+        font-size: 1.2rem;
+    }
+    section h2 {
+        font-size: 2.2rem;
+    }
+    #about .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    #about .profile-pic {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Style for hiding header on mobile scroll */
+    /* This rule is now moved out of the media query and renamed to .header-hidden */
+    /*
+    header.header-hidden-mobile {
+        transform: translateY(-105%); 
+        transition: transform 0.4s ease-in-out;
+    }
+    */
+}
+
+/* Portfolio Section */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.video-item {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.video-item img {
+    width: 100%;
+    height: 200px; /* Adjust as needed */
+    object-fit: cover;
+    display: block;
+}
+
+.video-item h3 {
+    font-size: 1.4rem;
+    font-weight: 600; /* Semi-bold video titles */
+    color: #1d1d1f;
+    margin: 1rem 1.5rem 0.5rem;
+}
+
+.video-item p {
+    font-size: 0.95rem;
+    color: #555;
+    padding: 0 1.5rem 1.5rem;
+    line-height: 1.6;
+}
+
+/* Stats Section */
+#stats {
+    background-color: #f4f4f7; /* Slightly different background for separation */
+}
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.stat-item {
+    background: #fff;
+    padding: 2.5rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.stat-item .stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700; /* Bold stat numbers */
+    color: #007aff;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item .stat-label {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Contact Section */
+#contact {
+    padding-top: 1rem; /* Further reduced top padding */
+    padding-bottom: 1rem; /* Further reduced bottom padding */
+}
+
+#contact p {
+    font-size: 1.1rem;
+    margin-bottom: 0rem;
+    color: #444;
+}
+#contact .contact-methods p {
+    margin-bottom: 0.rem;
+}
+#contact a {
+    color: #007aff;
+    text-decoration: none;
+    font-weight: 500;
+}
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: #1d1d1f;
+    color: #a0a0a5; /* Lighter gray for footer text */
+    text-align: center;
+    padding: 2rem 20px;
+    font-size: 0.9rem;
+}
+
+/* Scroll Animation Classes */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Style for hiding header on scroll (now global) */
+header.header-hidden { /* Renamed from .header-hidden-mobile and moved out of media query */
+    transform: translateY(-105%); /* Ensures it's fully out of view, including border/shadow */
+    transition: transform 0.4s ease-in-out;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center; /* Center the logo and the nav ul block */
+        padding: 1rem 20px;
+    }
+    nav .logo {
+        margin-bottom: 1rem; /* Space below logo on mobile */
+    }
+    nav ul {
+        /* flex-direction: column; */ /* REMOVE or comment out this line */
+        flex-direction: row; /* ADD THIS: Makes items appear next to each other */
+        justify-content: center; /* ADD THIS: Centers the items in the row */
+        flex-wrap: wrap; /* ADD THIS: Allows items to wrap to the next line if space is limited */
+        align-items: center; /* This was already here, good to keep */
+        width: 100%;
+    }
+    nav ul li {
+        /* margin: 0.7rem 0; */ /* REMOVE or comment out this line */
+        margin: 0.3rem 0.3rem; /* CHANGE THIS: Adjust margin for horizontal layout */
+    }
+    nav ul li a { /* ADD these styles for smaller links */
+        font-size: 0.85rem; /* Smaller font size */
+        padding: 0.3rem 0.4rem; /* Reduced padding */
+        font-weight: 500; /* Slightly less bold if needed, or keep 600 */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content .subtitle {
+        font-size: 1.2rem;
+    }
+    section h2 {
+        font-size: 2.2rem;
+    }
+    #about .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    #about .profile-pic {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Style for hiding header on mobile scroll */
+    /* This rule is now moved out of the media query and renamed to .header-hidden */
+    /*
+    header.header-hidden-mobile {
+        transform: translateY(-105%); 
+        transition: transform 0.4s ease-in-out;
+    }
+    */
+}
+
+/* Portfolio Section */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.video-item {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.video-item img {
+    width: 100%;
+    height: 200px; /* Adjust as needed */
+    object-fit: cover;
+    display: block;
+}
+
+.video-item h3 {
+    font-size: 1.4rem;
+    font-weight: 600; /* Semi-bold video titles */
+    color: #1d1d1f;
+    margin: 1rem 1.5rem 0.5rem;
+}
+
+.video-item p {
+    font-size: 0.95rem;
+    color: #555;
+    padding: 0 1.5rem 1.5rem;
+    line-height: 1.6;
+}
+
+/* Stats Section */
+#stats {
+    background-color: #f4f4f7; /* Slightly different background for separation */
+}
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.stat-item {
+    background: #fff;
+    padding: 2.5rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.stat-item .stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700; /* Bold stat numbers */
+    color: #007aff;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item .stat-label {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Contact Section */
+#contact {
+    padding-top: 1rem; /* Further reduced top padding */
+    padding-bottom: 1rem; /* Further reduced bottom padding */
+}
+
+#contact p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+#contact .contact-methods p {
+    margin-bottom: 0.8rem;
+}
+#contact a {
+    color: #007aff;
+    text-decoration: none;
+    font-weight: 500;
+}
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: #1d1d1f;
+    color: #a0a0a5; /* Lighter gray for footer text */
+    text-align: center;
+    padding: 2rem 20px;
+    font-size: 0.9rem;
+}
+
+/* Scroll Animation Classes */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Style for hiding header on scroll (now global) */
+header.header-hidden { /* Renamed from .header-hidden-mobile and moved out of media query */
+    transform: translateY(-105%); /* Ensures it's fully out of view, including border/shadow */
+    transition: transform 0.4s ease-in-out;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center; /* Center the logo and the nav ul block */
+        padding: 1rem 20px;
+    }
+    nav .logo {
+        margin-bottom: 1rem; /* Space below logo on mobile */
+    }
+    nav ul {
+        /* flex-direction: column; */ /* REMOVE or comment out this line */
+        flex-direction: row; /* ADD THIS: Makes items appear next to each other */
+        justify-content: center; /* ADD THIS: Centers the items in the row */
+        flex-wrap: wrap; /* ADD THIS: Allows items to wrap to the next line if space is limited */
+        align-items: center; /* This was already here, good to keep */
+        width: 100%;
+    }
+    nav ul li {
+        /* margin: 0.7rem 0; */ /* REMOVE or comment out this line */
+        margin: 0.3rem 0.3rem; /* CHANGE THIS: Adjust margin for horizontal layout */
+    }
+    nav ul li a { /* ADD these styles for smaller links */
+        font-size: 0.85rem; /* Smaller font size */
+        padding: 0.3rem 0.4rem; /* Reduced padding */
+        font-weight: 500; /* Slightly less bold if needed, or keep 600 */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content .subtitle {
+        font-size: 1.2rem;
+    }
+    section h2 {
+        font-size: 2.2rem;
+    }
+    #about .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    #about .profile-pic {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Style for hiding header on mobile scroll */
+    /* This rule is now moved out of the media query and renamed to .header-hidden */
+    /*
+    header.header-hidden-mobile {
+        transform: translateY(-105%); 
+        transition: transform 0.4s ease-in-out;
+    }
+    */
+}
+
+/* Portfolio Section */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.video-item {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.video-item img {
+    width: 100%;
+    height: 200px; /* Adjust as needed */
+    object-fit: cover;
+    display: block;
+}
+
+.video-item h3 {
+    font-size: 1.4rem;
+    font-weight: 600; /* Semi-bold video titles */
+    color: #1d1d1f;
+    margin: 1rem 1.5rem 0.5rem;
+}
+
+.video-item p {
+    font-size: 0.95rem;
+    color: #555;
+    padding: 0 1.5rem 1.5rem;
+    line-height: 1.6;
+}
+
+/* Stats Section */
+#stats {
+    background-color: #f4f4f7; /* Slightly different background for separation */
+}
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.stat-item {
+    background: #fff;
+    padding: 2.5rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.stat-item .stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700; /* Bold stat numbers */
+    color: #007aff;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item .stat-label {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Contact Section */
+#contact {
+    padding-top: 1rem; /* Further reduced top padding */
+    padding-bottom: 1rem; /* Further reduced bottom padding */
+}
+
+#contact p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+#contact .contact-methods p {
+    margin-bottom: 0.8rem;
+}
+#contact a {
+    color: #007aff;
+    text-decoration: none;
+    font-weight: 500;
+}
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: #1d1d1f;
+    color: #a0a0a5; /* Lighter gray for footer text */
+    text-align: center;
+    padding: 2rem 20px;
+    font-size: 0.9rem;
+}
+
+/* Scroll Animation Classes */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Style for hiding header on scroll (now global) */
+header.header-hidden { /* Renamed from .header-hidden-mobile and moved out of media query */
+    transform: translateY(-105%); /* Ensures it's fully out of view, including border/shadow */
+    transition: transform 0.4s ease-in-out;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center; /* Center the logo and the nav ul block */
+        padding: 1rem 20px;
+    }
+    nav .logo {
+        margin-bottom: 1rem; /* Space below logo on mobile */
+    }
+    nav ul {
+        /* flex-direction: column; */ /* REMOVE or comment out this line */
+        flex-direction: row; /* ADD THIS: Makes items appear next to each other */
+        justify-content: center; /* ADD THIS: Centers the items in the row */
+        flex-wrap: wrap; /* ADD THIS: Allows items to wrap to the next line if space is limited */
+        align-items: center; /* This was already here, good to keep */
+        width: 100%;
+    }
+    nav ul li {
+        /* margin: 0.7rem 0; */ /* REMOVE or comment out this line */
+        margin: 0.3rem 0.3rem; /* CHANGE THIS: Adjust margin for horizontal layout */
+    }
+    nav ul li a { /* ADD these styles for smaller links */
+        font-size: 0.85rem; /* Smaller font size */
+        padding: 0.3rem 0.4rem; /* Reduced padding */
+        font-weight: 500; /* Slightly less bold if needed, or keep 600 */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content .subtitle {
+        font-size: 1.2rem;
+    }
+    section h2 {
+        font-size: 2.2rem;
+    }
+    #about .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    #about .profile-pic {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Style for hiding header on mobile scroll */
+    /* This rule is now moved out of the media query and renamed to .header-hidden */
+    /*
+    header.header-hidden-mobile {
+        transform: translateY(-105%); 
+        transition: transform 0.4s ease-in-out;
+    }
+    */
+}
+
+/* Portfolio Section */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.video-item {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.video-item img {
+    width: 100%;
+    height: 200px; /* Adjust as needed */
+    object-fit: cover;
+    display: block;
+}
+
+.video-item h3 {
+    font-size: 1.4rem;
+    font-weight: 600; /* Semi-bold video titles */
+    color: #1d1d1f;
+    margin: 1rem 1.5rem 0.5rem;
+}
+
+.video-item p {
+    font-size: 0.95rem;
+    color: #555;
+    padding: 0 1.5rem 1.5rem;
+    line-height: 1.6;
+}
+
+/* Stats Section */
+#stats {
+    background-color: #f4f4f7; /* Slightly different background for separation */
+}
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.stat-item {
+    background: #fff;
+    padding: 2.5rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.stat-item .stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700; /* Bold stat numbers */
+    color: #007aff;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item .stat-label {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Contact Section */
+#contact {
+    padding-top: 1rem; /* Further reduced top padding */
+    padding-bottom: 1rem; /* Further reduced bottom padding */
+}
+
+#contact p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+#contact .contact-methods p {
+    margin-bottom: 0.8rem;
+}
+#contact a {
+    color: #007aff;
+    text-decoration: none;
+    font-weight: 500;
+}
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: #1d1d1f;
+    color: #a0a0a5; /* Lighter gray for footer text */
+    text-align: center;
+    padding: 2rem 20px;
+    font-size: 0.9rem;
+}
+
+/* Scroll Animation Classes */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Style for hiding header on scroll (now global) */
+header.header-hidden { /* Renamed from .header-hidden-mobile and moved out of media query */
+    transform: translateY(-105%); /* Ensures it's fully out of view, including border/shadow */
+    transition: transform 0.4s ease-in-out;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center; /* Center the logo and the nav ul block */
+        padding: 1rem 20px;
+    }
+    nav .logo {
+        margin-bottom: 1rem; /* Space below logo on mobile */
+    }
+    nav ul {
+        /* flex-direction: column; */ /* REMOVE or comment out this line */
+        flex-direction: row; /* ADD THIS: Makes items appear next to each other */
+        justify-content: center; /* ADD THIS: Centers the items in the row */
+        flex-wrap: wrap; /* ADD THIS: Allows items to wrap to the next line if space is limited */
+        align-items: center; /* This was already here, good to keep */
+        width: 100%;
+    }
+    nav ul li {
+        /* margin: 0.7rem 0; */ /* REMOVE or comment out this line */
+        margin: 0.3rem 0.3rem; /* CHANGE THIS: Adjust margin for horizontal layout */
+    }
+    nav ul li a { /* ADD these styles for smaller links */
+        font-size: 0.85rem; /* Smaller font size */
+        padding: 0.3rem 0.4rem; /* Reduced padding */
+        font-weight: 500; /* Slightly less bold if needed, or keep 600 */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content .subtitle {
+        font-size: 1.2rem;
+    }
+    section h2 {
+        font-size: 2.2rem;
+    }
+    #about .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    #about .profile-pic {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Style for hiding header on mobile scroll */
+    /* This rule is now moved out of the media query and renamed to .header-hidden */
+    /*
+    header.header-hidden-mobile {
+        transform: translateY(-105%); 
+        transition: transform 0.4s ease-in-out;
+    }
+    */
+}
+
+/* Portfolio Section */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.video-item {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.video-item img {
+    width: 100%;
+    height: 200px; /* Adjust as needed */
+    object-fit: cover;
+    display: block;
+}
+
+.video-item h3 {
+    font-size: 1.4rem;
+    font-weight: 600; /* Semi-bold video titles */
+    color: #1d1d1f;
+    margin: 1rem 1.5rem 0.5rem;
+}
+
+.video-item p {
+    font-size: 0.95rem;
+    color: #555;
+    padding: 0 1.5rem 1.5rem;
+    line-height: 1.6;
+}
+
+/* Stats Section */
+#stats {
+    background-color: #f4f4f7; /* Slightly different background for separation */
+}
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.stat-item {
+    background: #fff;
+    padding: 2.5rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.stat-item .stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700; /* Bold stat numbers */
+    color: #007aff;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item .stat-label {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Contact Section */
+#contact {
+    padding-top: 1rem; /* Further reduced top padding */
+    padding-bottom: 1rem; /* Further reduced bottom padding */
+}
+
+#contact p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+#contact .contact-methods p {
+    margin-bottom: 0.8rem;
+}
+#contact a {
+    color: #007aff;
+    text-decoration: none;
+    font-weight: 500;
+}
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: #1d1d1f;
+    color: #a0a0a5; /* Lighter gray for footer text */
+    text-align: center;
+    padding: 2rem 20px;
+    font-size: 0.9rem;
+}
+
+/* Scroll Animation Classes */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Style for hiding header on scroll (now global) */
+header.header-hidden { /* Renamed from .header-hidden-mobile and moved out of media query */
+    transform: translateY(-105%); /* Ensures it's fully out of view, including border/shadow */
+    transition: transform 0.4s ease-in-out;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center; /* Center the logo and the nav ul block */
+        padding: 1rem 20px;
+    }
+    nav .logo {
+        margin-bottom: 1rem; /* Space below logo on mobile */
+    }
+    nav ul {
+        /* flex-direction: column; */ /* REMOVE or comment out this line */
+        flex-direction: row; /* ADD THIS: Makes items appear next to each other */
+        justify-content: center; /* ADD THIS: Centers the items in the row */
+        flex-wrap: wrap; /* ADD THIS: Allows items to wrap to the next line if space is limited */
+        align-items: center; /* This was already here, good to keep */
+        width: 100%;
+    }
+    nav ul li {
+        /* margin: 0.7rem 0; */ /* REMOVE or comment out this line */
+        margin: 0.3rem 0.3rem; /* CHANGE THIS: Adjust margin for horizontal layout */
+    }
+    nav ul li a { /* ADD these styles for smaller links */
+        font-size: 0.85rem; /* Smaller font size */
+        padding: 0.3rem 0.4rem; /* Reduced padding */
+        font-weight: 500; /* Slightly less bold if needed, or keep 600 */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content .subtitle {
+        font-size: 1.2rem;
+    }
+    section h2 {
+        font-size: 2.2rem;
+    }
+    #about .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    #about .profile-pic {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Style for hiding header on mobile scroll */
+    /* This rule is now moved out of the media query and renamed to .header-hidden */
+    /*
+    header.header-hidden-mobile {
+        transform: translateY(-105%); 
+        transition: transform 0.4s ease-in-out;
+    }
+    */
+}
+
+/* Portfolio Section */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.video-item {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.video-item img {
+    width: 100%;
+    height: 200px; /* Adjust as needed */
+    object-fit: cover;
+    display: block;
+}
+
+.video-item h3 {
+    font-size: 1.4rem;
+    font-weight: 600; /* Semi-bold video titles */
+    color: #1d1d1f;
+    margin: 1rem 1.5rem 0.5rem;
+}
+
+.video-item p {
+    font-size: 0.95rem;
+    color: #555;
+    padding: 0 1.5rem 1.5rem;
+    line-height: 1.6;
+}
+
+/* Stats Section */
+#stats {
+    background-color: #f4f4f7; /* Slightly different background for separation */
+}
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.stat-item {
+    background: #fff;
+    padding: 2.5rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.stat-item .stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700; /* Bold stat numbers */
+    color: #007aff;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item .stat-label {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Contact Section */
+#contact {
+    padding-top: 1rem; /* Further reduced top padding */
+    padding-bottom: 1rem; /* Further reduced bottom padding */
+}
+
+#contact p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+#contact .contact-methods p {
+    margin-bottom: 0.8rem;
+}
+#contact a {
+    color: #007aff;
+    text-decoration: none;
+    font-weight: 500;
+}
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: #1d1d1f;
+    color: #a0a0a5; /* Lighter gray for footer text */
+    text-align: center;
+    padding: 2rem 20px;
+    font-size: 0.9rem;
+}
+
+/* Scroll Animation Classes */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Style for hiding header on scroll (now global) */
+header.header-hidden { /* Renamed from .header-hidden-mobile and moved out of media query */
+    transform: translateY(-105%); /* Ensures it's fully out of view, including border/shadow */
+    transition: transform 0.4s ease-in-out;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center; /* Center the logo and the nav ul block */
+        padding: 1rem 20px;
+    }
+    nav .logo {
+        margin-bottom: 1rem; /* Space below logo on mobile */
+    }
+    nav ul {
+        /* flex-direction: column; */ /* REMOVE or comment out this line */
+        flex-direction: row; /* ADD THIS: Makes items appear next to each other */
+        justify-content: center; /* ADD THIS: Centers the items in the row */
+        flex-wrap: wrap; /* ADD THIS: Allows items to wrap to the next line if space is limited */
+        align-items: center; /* This was already here, good to keep */
+        width: 100%;
+    }
+    nav ul li {
+        /* margin: 0.7rem 0; */ /* REMOVE or comment out this line */
+        margin: 0.3rem 0.3rem; /* CHANGE THIS: Adjust margin for horizontal layout */
+    }
+    nav ul li a { /* ADD these styles for smaller links */
+        font-size: 0.85rem; /* Smaller font size */
+        padding: 0.3rem 0.4rem; /* Reduced padding */
+        font-weight: 500; /* Slightly less bold if needed, or keep 600 */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content .subtitle {
+        font-size: 1.2rem;
+    }
+    section h2 {
+        font-size: 2.2rem;
+    }
+    #about .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    #about .profile-pic {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Style for hiding header on mobile scroll */
+    /* This rule is now moved out of the media query and renamed to .header-hidden */
+    /*
+    header.header-hidden-mobile {
+        transform: translateY(-105%); 
+        transition: transform 0.4s ease-in-out;
+    }
+    */
+}
+
+/* Portfolio Section */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.video-item {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.video-item img {
+    width: 100%;
+    height: 200px; /* Adjust as needed */
+    object-fit: cover;
+    display: block;
+}
+
+.video-item h3 {
+    font-size: 1.4rem;
+    font-weight: 600; /* Semi-bold video titles */
+    color: #1d1d1f;
+    margin: 1rem 1.5rem 0.5rem;
+}
+
+.video-item p {
+    font-size: 0.95rem;
+    color: #555;
+    padding: 0 1.5rem 1.5rem;
+    line-height: 1.6;
+}
+
+/* Stats Section */
+#stats {
+    background-color: #f4f4f7; /* Slightly different background for separation */
+}
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.stat-item {
+    background: #fff;
+    padding: 2.5rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.stat-item .stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700; /* Bold stat numbers */
+    color: #007aff;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item .stat-label {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Contact Section */
+#contact {
+    padding-top: 1rem; /* Further reduced top padding */
+    padding-bottom: 1rem; /* Further reduced bottom padding */
+}
+
+#contact p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+#contact .contact-methods p {
+    margin-bottom: 0.8rem;
+}
+#contact a {
+    color: #007aff;
+    text-decoration: none;
+    font-weight: 500;
+}
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: #1d1d1f;
+    color: #a0a0a5; /* Lighter gray for footer text */
+    text-align: center;
+    padding: 2rem 20px;
+    font-size: 0.9rem;
+}
+
+/* Scroll Animation Classes */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Style for hiding header on scroll (now global) */
+header.header-hidden { /* Renamed from .header-hidden-mobile and moved out of media query */
+    transform: translateY(-105%); /* Ensures it's fully out of view, including border/shadow */
+    transition: transform 0.4s ease-in-out;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center; /* Center the logo and the nav ul block */
+        padding: 1rem 20px;
+    }
+    nav .logo {
+        margin-bottom: 1rem; /* Space below logo on mobile */
+    }
+    nav ul {
+        /* flex-direction: column; */ /* REMOVE or comment out this line */
+        flex-direction: row; /* ADD THIS: Makes items appear next to each other */
+        justify-content: center; /* ADD THIS: Centers the items in the row */
+        flex-wrap: wrap; /* ADD THIS: Allows items to wrap to the next line if space is limited */
+        align-items: center; /* This was already here, good to keep */
+        width: 100%;
+    }
+    nav ul li {
+        /* margin: 0.7rem 0; */ /* REMOVE or comment out this line */
+        margin: 0.3rem 0.3rem; /* CHANGE THIS: Adjust margin for horizontal layout */
+    }
+    nav ul li a { /* ADD these styles for smaller links */
+        font-size: 0.85rem; /* Smaller font size */
+        padding: 0.3rem 0.4rem; /* Reduced padding */
+        font-weight: 500; /* Slightly less bold if needed, or keep 600 */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content .subtitle {
+        font-size: 1.2rem;
+    }
+    section h2 {
+        font-size: 2.2rem;
+    }
+    #about .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    #about .profile-pic {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Style for hiding header on mobile scroll */
+    /* This rule is now moved out of the media query and renamed to .header-hidden */
+    /*
+    header.header-hidden-mobile {
+        transform: translateY(-105%); 
+        transition: transform 0.4s ease-in-out;
+    }
+    */
+}
+
+/* Portfolio Section */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.video-item {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.video-item img {
+    width: 100%;
+    height: 200px; /* Adjust as needed */
+    object-fit: cover;
+    display: block;
+}
+
+.video-item h3 {
+    font-size: 1.4rem;
+    font-weight: 600; /* Semi-bold video titles */
+    color: #1d1d1f;
+    margin: 1rem 1.5rem 0.5rem;
+}
+
+.video-item p {
+    font-size: 0.95rem;
+    color: #555;
+    padding: 0 1.5rem 1.5rem;
+    line-height: 1.6;
+}
+
+/* Stats Section */
+#stats {
+    background-color: #f4f4f7; /* Slightly different background for separation */
+}
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.stat-item {
+    background: #fff;
+    padding: 2.5rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.stat-item .stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700; /* Bold stat numbers */
+    color: #007aff;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item .stat-label {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Contact Section */
+#contact {
+    padding-top: 1rem; /* Further reduced top padding */
+    padding-bottom: 1rem; /* Further reduced bottom padding */
+}
+
+#contact p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+#contact .contact-methods p {
+    margin-bottom: 0.8rem;
+}
+#contact a {
+    color: #007aff;
+    text-decoration: none;
+    font-weight: 500;
+}
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: #1d1d1f;
+    color: #a0a0a5; /* Lighter gray for footer text */
+    text-align: center;
+    padding: 2rem 20px;
+    font-size: 0.9rem;
+}
+
+/* Scroll Animation Classes */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Style for hiding header on scroll (now global) */
+header.header-hidden { /* Renamed from .header-hidden-mobile and moved out of media query */
+    transform: translateY(-105%); /* Ensures it's fully out of view, including border/shadow */
+    transition: transform 0.4s ease-in-out;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center; /* Center the logo and the nav ul block */
+        padding: 1rem 20px;
+    }
+    nav .logo {
+        margin-bottom: 1rem; /* Space below logo on mobile */
+    }
+    nav ul {
+        /* flex-direction: column; */ /* REMOVE or comment out this line */
+        flex-direction: row; /* ADD THIS: Makes items appear next to each other */
+        justify-content: center; /* ADD THIS: Centers the items in the row */
+        flex-wrap: wrap; /* ADD THIS: Allows items to wrap to the next line if space is limited */
+        align-items: center; /* This was already here, good to keep */
+        width: 100%;
+    }
+    nav ul li {
+        /* margin: 0.7rem 0; */ /* REMOVE or comment out this line */
+        margin: 0.3rem 0.3rem; /* CHANGE THIS: Adjust margin for horizontal layout */
+    }
+    nav ul li a { /* ADD these styles for smaller links */
+        font-size: 0.85rem; /* Smaller font size */
+        padding: 0.3rem 0.4rem; /* Reduced padding */
+        font-weight: 500; /* Slightly less bold if needed, or keep 600 */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content .subtitle {
+        font-size: 1.2rem;
+    }
+    section h2 {
+        font-size: 2.2rem;
+    }
+    #about .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    #about .profile-pic {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Style for hiding header on mobile scroll */
+    /* This rule is now moved out of the media query and renamed to .header-hidden */
+    /*
+    header.header-hidden-mobile {
+        transform: translateY(-105%); 
+        transition: transform 0.4s ease-in-out;
+    }
+    */
+}
+
+/* Portfolio Section */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.video-item {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.video-item img {
+    width: 100%;
+    height: 200px; /* Adjust as needed */
+    object-fit: cover;
+    display: block;
+}
+
+.video-item h3 {
+    font-size: 1.4rem;
+    font-weight: 600; /* Semi-bold video titles */
+    color: #1d1d1f;
+    margin: 1rem 1.5rem 0.5rem;
+}
+
+.video-item p {
+    font-size: 0.95rem;
+    color: #555;
+    padding: 0 1.5rem 1.5rem;
+    line-height: 1.6;
+}
+
+/* Stats Section */
+#stats {
+    background-color: #f4f4f7; /* Slightly different background for separation */
+}
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.stat-item {
+    background: #fff;
+    padding: 2.5rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.stat-item .stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700; /* Bold stat numbers */
+    color: #007aff;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item .stat-label {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Contact Section */
+#contact {
+    padding-top: 1rem; /* Further reduced top padding */
+    padding-bottom: 1rem; /* Further reduced bottom padding */
+}
+
+#contact p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+#contact .contact-methods p {
+    margin-bottom: 0.8rem;
+}
+#contact a {
+    color: #007aff;
+    text-decoration: none;
+    font-weight: 500;
+}
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: #1d1d1f;
+    color: #a0a0a5; /* Lighter gray for footer text */
+    text-align: center;
+    padding: 2rem 20px;
+    font-size: 0.9rem;
+}
+
+/* Scroll Animation Classes */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Style for hiding header on scroll (now global) */
+header.header-hidden { /* Renamed from .header-hidden-mobile and moved out of media query */
+    transform: translateY(-105%); /* Ensures it's fully out of view, including border/shadow */
+    transition: transform 0.4s ease-in-out;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center; /* Center the logo and the nav ul block */
+        padding: 1rem 20px;
+    }
+    nav .logo {
+        margin-bottom: 1rem; /* Space below logo on mobile */
+    }
+    nav ul {
+        /* flex-direction: column; */ /* REMOVE or comment out this line */
+        flex-direction: row; /* ADD THIS: Makes items appear next to each other */
+        justify-content: center; /* ADD THIS: Centers the items in the row */
+        flex-wrap: wrap; /* ADD THIS: Allows items to wrap to the next line if space is limited */
+        align-items: center; /* This was already here, good to keep */
+        width: 100%;
+    }
+    nav ul li {
+        /* margin: 0.7rem 0; */ /* REMOVE or comment out this line */
+        margin: 0.3rem 0.3rem; /* CHANGE THIS: Adjust margin for horizontal layout */
+    }
+    nav ul li a { /* ADD these styles for smaller links */
+        font-size: 0.85rem; /* Smaller font size */
+        padding: 0.3rem 0.4rem; /* Reduced padding */
+        font-weight: 500; /* Slightly less bold if needed, or keep 600 */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content .subtitle {
+        font-size: 1.2rem;
+    }
+    section h2 {
+        font-size: 2.2rem;
+    }
+    #about .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    #about .profile-pic {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Style for hiding header on mobile scroll */
+    /* This rule is now moved out of the media query and renamed to .header-hidden */
+    /*
+    header.header-hidden-mobile {
+        transform: translateY(-105%); 
+        transition: transform 0.4s ease-in-out;
+    }
+    */
+}
+
+/* Portfolio Section */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.video-item {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.video-item img {
+    width: 100%;
+    height: 200px; /* Adjust as needed */
+    object-fit: cover;
+    display: block;
+}
+
+.video-item h3 {
+    font-size: 1.4rem;
+    font-weight: 600; /* Semi-bold video titles */
+    color: #1d1d1f;
+    margin: 1rem 1.5rem 0.5rem;
+}
+
+.video-item p {
+    font-size: 0.95rem;
+    color: #555;
+    padding: 0 1.5rem 1.5rem;
+    line-height: 1.6;
+}
+
+/* Stats Section */
+#stats {
+    background-color: #f4f4f7; /* Slightly different background for separation */
+}
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.stat-item {
+    background: #fff;
+    padding: 2.5rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.stat-item .stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700; /* Bold stat numbers */
+    color: #007aff;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item .stat-label {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Contact Section */
+#contact {
+    padding-top: 1rem; /* Further reduced top padding */
+    padding-bottom: 1rem; /* Further reduced bottom padding */
+}
+
+#contact p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+#contact .contact-methods p {
+    margin-bottom: 0.8rem;
+}
+#contact a {
+    color: #007aff;
+    text-decoration: none;
+    font-weight: 500;
+}
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: #1d1d1f;
+    color: #a0a0a5; /* Lighter gray for footer text */
+    text-align: center;
+    padding: 2rem 20px;
+    font-size: 0.9rem;
+}
+
+/* Scroll Animation Classes */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Style for hiding header on scroll (now global) */
+header.header-hidden { /* Renamed from .header-hidden-mobile and moved out of media query */
+    transform: translateY(-105%); /* Ensures it's fully out of view, including border/shadow */
+    transition: transform 0.4s ease-in-out;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center; /* Center the logo and the nav ul block */
+        padding: 1rem 20px;
+    }
+    nav .logo {
+        margin-bottom: 1rem; /* Space below logo on mobile */
+    }
+    nav ul {
+        /* flex-direction: column; */ /* REMOVE or comment out this line */
+        flex-direction: row; /* ADD THIS: Makes items appear next to each other */
+        justify-content: center; /* ADD THIS: Centers the items in the row */
+        flex-wrap: wrap; /* ADD THIS: Allows items to wrap to the next line if space is limited */
+        align-items: center; /* This was already here, good to keep */
+        width: 100%;
+    }
+    nav ul li {
+        /* margin: 0.7rem 0; */ /* REMOVE or comment out this line */
+        margin: 0.3rem 0.3rem; /* CHANGE THIS: Adjust margin for horizontal layout */
+    }
+    nav ul li a { /* ADD these styles for smaller links */
+        font-size: 0.85rem; /* Smaller font size */
+        padding: 0.3rem 0.4rem; /* Reduced padding */
+        font-weight: 500; /* Slightly less bold if needed, or keep 600 */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content .subtitle {
+        font-size: 1.2rem;
+    }
+    section h2 {
+        font-size: 2.2rem;
+    }
+    #about .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    #about .profile-pic {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Style for hiding header on mobile scroll */
+    /* This rule is now moved out of the media query and renamed to .header-hidden */
+    /*
+    header.header-hidden-mobile {
+        transform: translateY(-105%); 
+        transition: transform 0.4s ease-in-out;
+    }
+    */
+}
+
+/* Portfolio Section */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.video-item {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.video-item img {
+    width: 100%;
+    height: 200px; /* Adjust as needed */
+    object-fit: cover;
+    display: block;
+}
+
+.video-item h3 {
+    font-size: 1.4rem;
+    font-weight: 600; /* Semi-bold video titles */
+    color: #1d1d1f;
+    margin: 1rem 1.5rem 0.5rem;
+}
+
+.video-item p {
+    font-size: 0.95rem;
+    color: #555;
+    padding: 0 1.5rem 1.5rem;
+    line-height: 1.6;
+}
+
+/* Stats Section */
+#stats {
+    background-color: #f4f4f7; /* Slightly different background for separation */
+}
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.stat-item {
+    background: #fff;
+    padding: 2.5rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.stat-item .stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700; /* Bold stat numbers */
+    color: #007aff;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item .stat-label {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Contact Section */
+#contact {
+    padding-top: 1rem; /* Further reduced top padding */
+    padding-bottom: 1rem; /* Further reduced bottom padding */
+}
+
+#contact p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+#contact .contact-methods p {
+    margin-bottom: 0.8rem;
+}
+#contact a {
+    color: #007aff;
+    text-decoration: none;
+    font-weight: 500;
+}
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: #1d1d1f;
+    color: #a0a0a5; /* Lighter gray for footer text */
+    text-align: center;
+    padding: 2rem 20px;
+    font-size: 0.9rem;
+}
+
+/* Scroll Animation Classes */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Style for hiding header on scroll (now global) */
+header.header-hidden { /* Renamed from .header-hidden-mobile and moved out of media query */
+    transform: translateY(-105%); /* Ensures it's fully out of view, including border/shadow */
+    transition: transform 0.4s ease-in-out;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center; /* Center the logo and the nav ul block */
+        padding: 1rem 20px;
+    }
+    nav .logo {
+        margin-bottom: 1rem; /* Space below logo on mobile */
+    }
+    nav ul {
+        /* flex-direction: column; */ /* REMOVE or comment out this line */
+        flex-direction: row; /* ADD THIS: Makes items appear next to each other */
+        justify-content: center; /* ADD THIS: Centers the items in the row */
+        flex-wrap: wrap; /* ADD THIS: Allows items to wrap to the next line if space is limited */
+        align-items: center; /* This was already here, good to keep */
+        width: 100%;
+    }
+    nav ul li {
+        /* margin: 0.7rem 0; */ /* REMOVE or comment out this line */
+        margin:
+    }
+}
