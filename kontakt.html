@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <!--  icon dava logo stranky R -->
+</head>
+<body>
+    <header>
+        <nav> <!--  navigator, kontantny formular a tieto  -->
+            <div class="logo"><a href="index.html">Radovan</a></div>
+            <ul>
+                <li><a href="index.html">Domov</a></li>
+                <li><a href="o_mne.html">O mne</a></li>
+                <li><a href="galeria.html">Obrázková galéria</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main> <!--  formular  -->
+        <section id="contact" class="scroll-animate">
+            <h2>Kontaktuj Ma!</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Meno:</label>
+                    <input type="text" id="name" name="meno" minlength="5" maxlength="128" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" maxlength="256" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Predmet:</label>
+                    <input type="text" id="subject" name="predmet/vec" minlength="3" maxlength="128" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Správa</label>
+                    <textarea id="message" name="message" minlength="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Tel.Číslo:</label>
+                    <input type="tel" id="phone" name="phone" minlength="7">
+                </div>
+                <button type="submit">Odoslať!</button>
+            </form>
+        </section>
+    </main>
+    <!--  pata -->
+    <footer>
+        <p>&copy; 2025 Radovan. All rights reserved.</p>
+    </footer>
+<!--  javascript --> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="javascript.js"></script>
+</body>
+</html>

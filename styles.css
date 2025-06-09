@@ -1,0 +1,558 @@
+/* ===== Base Styles ===== */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    color: #333;
+    background-color: #fdfdfd;
+    scroll-behavior: smooth;
+}
+
+/* Hlavicka + navigacia */
+header {
+    background: #ffffff;
+    color: #333;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+    border-bottom: 1px solid #e7e7e7;
+}
+
+/* Navigacny riadok */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+nav .logo {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #1d1d1f;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+    position: relative;
+}
+
+/* Deliaca ciara za prvou polozkou */
+nav ul li:nth-child(1)::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 15px;
+    background-color: #007bff;
+}
+
+/* Odkazy v menu */
+nav ul li a {
+    color: #444;
+    text-decoration: none;
+    padding: 0.5rem 0.2rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+nav ul li a:hover, 
+nav ul li a.active {
+    color: #007aff;
+    border-bottom-color: #007aff;
+}
+
+/* Obsah stranky */
+main {
+    overflow-x: hidden;
+    flex: 1;
+}
+
+section {
+    padding: 5rem 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    color: #1d1d1f;
+    font-weight: 700;
+}
+
+/* Uvodny banner */
+#hero {
+    background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.8)), url('hero-background-placeholder.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #1d1d1f;
+    min-height: 10vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero-content {
+    margin-top: 0vh;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-content .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    color: #333;
+    font-weight: 400;
+}
+
+.hero-content .subtitle strong,
+.about-content strong {
+    font-weight: 600;
+    color: #007aff;
+}
+
+/* O mne sekcia */
+#about .about-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    text-align: left;
+}
+
+#about .profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+#about p {
+    font-size: 1.1rem;
+    color: #444;
+    max-width: 700px;
+}
+
+/* Galéria */
+#gallery {
+    position: relative;
+    padding: 5rem 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.gallery-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.logo a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Slider s obrazkami */
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider img {
+    width: 100%;
+    display: block;
+    flex-shrink: 0;
+    object-fit: cover;
+    height: 450px;
+}
+
+/* Tlacidla pre posun galérie */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    background-color: rgba(0,0,0,0.5);
+    border: none;
+    z-index: 10;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Statistika sekcia */
+#stats {
+    background-color: #f4f4f7;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.stat-item {
+    background: #fff;
+    padding: 2.5rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.stat-item .stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #007aff;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item .stat-label {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Kontaktna sekcia */
+#contact {
+    padding: 1.5rem 0;
+}
+
+#contact p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+#contact .contact-methods p {
+    margin-bottom: 0.8rem;
+}
+
+#contact a {
+    color: #007aff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Formular pre kontakt */
+.contact-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #1d1d1f;
+}
+
+.form-group input,
+.form-group textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #e7e7e7;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #007aff;
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Tlacidlo formulara */
+.contact-form button[type="submit"] {
+    background-color: #007aff;
+    color: #fff;
+    padding: 1rem 2.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    width: 100%;
+}
+
+.contact-form button:hover {
+    background-color: #005ecb;
+    transform: translateY(-3px);
+}
+
+/* Zapadne do stylu buttonu */
+.contact-form .cta-button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+/* Paticka dole */
+footer {
+    margin-top: auto;
+    background: #1d1d1f;
+    color: #a0a0a5;
+    text-align: center;
+    padding: 2rem 20px;
+    font-size: 0.9rem;
+}
+
+/* Tlacidla CTA */
+.cta-button {
+    background: #007aff;
+    color: #fff;
+    padding: 0.9rem 2.2rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    border: 2px solid #007aff;
+}
+
+.cta-button:hover {
+    background: #005ecb;
+    border-color: #005ecb;
+    transform: translateY(-3px);
+}
+
+.cta-button.secondary {
+    background: transparent;
+    color: #007aff;
+    border: 2px solid #007aff;
+}
+
+.cta-button.secondary:hover {
+    background: rgba(0, 122, 255, 0.1);
+    color: #005ecb;
+    border-color: #005ecb;
+}
+
+/* Animacie pri skrolovani */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Skryta hlavicka pri scrollovani */
+header.header-hidden {
+    transform: translateY(-105%);
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Upravený obsah sekcie o mne */
+.about-content-reworked {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about-item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+}
+
+.about-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+}
+
+.about-item .text-window {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.about-item h3 {
+    font-size: 1.8rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.about-item p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+#about_me h2 {
+    font-size: 4rem;
+}
+
+#about_me a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 1.7rem;
+}
+
+/* Responzivne pre mobil */
+@media (max-width: 480px) {
+    .about-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    .about-item h3 {
+        font-size: 1.5rem;
+    }
+
+    .about-item p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 20px;
+    }
+
+    nav .logo {
+        margin-bottom: 1rem;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 0.3rem 0.3rem;
+    }
+
+    nav ul li a {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.4rem;
+        font-weight: 500;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content .subtitle {
+        font-size: 1.2rem;
+    }
+
+    section h2 {
+        font-size: 2.2rem;
+    }
+
+    #about .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #about .profile-pic {
+        margin-bottom: 1.5rem;
+    }
+
+    .slider img {
+        height: 250px;
+    }
+
+    .about-item {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    .about-item:nth-child(even) {
+        flex-direction: column !important;
+    }
+
+    .about-pic {
+        margin-bottom: 20px;
+    }
+
+    .about-item .text-window {
+        text-align: center;
+    }
+
+    #about_me a {
+        font-size: 1.4rem;
+    }
+}
