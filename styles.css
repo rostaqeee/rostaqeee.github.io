@@ -555,4 +555,7 @@ header.header-hidden {
     #about_me a {
         font-size: 1.4rem;
     }
+    nav ul li{
+        font-size : 1.2rem;
+    }
 }
