@@ -80,4 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', handleHeaderScroll); // Re-check on resize, updated function name
 
     console.log("Portfolio script loaded and animations initialized.");
+
+    
 });

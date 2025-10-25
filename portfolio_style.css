@@ -230,6 +230,11 @@ section h2 {
     color: #555;
     font-weight: 700;
 }
+.stat-label-small{
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: 600;
+}
 /* ===== Contact Section ===== */
 #contact {
     padding-top: 1.5rem;
