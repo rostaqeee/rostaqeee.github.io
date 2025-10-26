@@ -70,13 +70,18 @@ document.querySelectorAll('.video-container').forEach(container => {
     const btn = container.querySelector('.playPauseBtn');
     let hideTimeout;
 
-    // 🔊 Set video to low volume on load
-    video.volume = 0.1; // 20% volume
+    // 🔊 Start muted for autoplay safety, then enable audio on user tap
+    video.muted = true;
+    video.volume = 0.1; // Low volume to avoid loud surprises
 
     function toggleVideo() {
         if (video.paused) {
             pauseAllOtherVideos(video);
-            video.play();
+
+            // 🔊 iOS fix: allow audio once user interacts
+            video.muted = false;
+            video.play().catch(err => console.log("Playback failed:", err));
+
             btn.classList.remove('play');
             btn.classList.add('pause');
             fadeOutTriangle();
